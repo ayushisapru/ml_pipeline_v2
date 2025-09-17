@@ -8,6 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
+    # Prep service
     - host: prep.127.0.0.1.nip.io
       http:
         paths:
@@ -15,9 +16,23 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: prep-prep-dev
+                name: prep-prep
                 port:
                   number: 80
+
+    # Train service
+    - host: train.127.0.0.1.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: train-train
+                port:
+                  number: 80
+
+    # MinIO API
     - host: s3.127.0.0.1.nip.io
       http:
         paths:
@@ -28,6 +43,8 @@ spec:
                 name: minio
                 port:
                   number: 9000
+
+    # MinIO Console
     - host: minio.127.0.0.1.nip.io
       http:
         paths:
