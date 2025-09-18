@@ -15,10 +15,10 @@ spec:
     spec:
       containers:
       - name: prep
-        image: ml-pipeline/prep:dev
+        image: ml-pipeline/prep:dev  
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 8080   
         env:
         - name: S3_ENDPOINT
           valueFrom:
