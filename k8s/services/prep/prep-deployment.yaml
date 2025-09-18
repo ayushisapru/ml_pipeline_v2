@@ -1,0 +1,6 @@
+spec:
+  containers:
+  - name: prep
+    image: ayushisapru02/ml-pipeline-prep:dev
+    ports:
+    - containerPort: 8080
