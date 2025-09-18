@@ -7,3 +7,6 @@ boto3
 prometheus-client
 python-dotenv
 confluent-kafka
+pandas
+numpy
+pyarrow
