@@ -1,0 +1,6 @@
+spec:
+  containers:
+  - name: train
+    image: ayushisapru02/ml-pipeline-train:dev
+    ports:
+    - containerPort: 8080
