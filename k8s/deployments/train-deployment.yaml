@@ -18,7 +18,7 @@ spec:
           image: ml-pipeline/train:dev
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 80
+            - containerPort: 8080 
           envFrom:
             - secretRef:
                 name: ml-app-secrets
